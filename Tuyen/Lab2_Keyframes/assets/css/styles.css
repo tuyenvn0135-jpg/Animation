@@ -1,0 +1,132 @@
+/* Định dạng chung để các bài tách biệt */
+section {
+    padding: 50px;
+    border-bottom: 2px dashed #ccc;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Bài 1: Marquee */
+.marquee {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+.marquee p {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    animation: moveText 10s linear infinite;
+}
+@keyframes moveText {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+/* Bài 2: Rotate Box */
+.box-container {
+    display: flex;
+    justify-content: center;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    animation: rotateBox 3s linear infinite;
+}
+@keyframes rotateBox {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Bài 3: Fade-in */
+.fade-container img {
+    width: 150px;
+    margin: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+.fade-container img:nth-child(1) { animation-delay: 0s; }
+.fade-container img:nth-child(2) { animation-delay: 0.5s; }
+.fade-container img:nth-child(3) { animation-delay: 1s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Bài 4: Button CTA */
+.cta {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: blink 1s infinite alternate;
+}
+@keyframes blink {
+    0% { background-color: red; transform: scale(1); }
+    50% { background-color: orange; transform: scale(1.1); }
+    100% { background-color: red; transform: scale(1); }
+}
+
+/* Bài 5: Slider */
+.slider {
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slide-track {
+    display: flex;
+    width: 300%; /* 3 ảnh */
+    animation: slide 15s infinite;
+}
+.slide-track img {
+    width: 100%;
+}
+@keyframes slide {
+    0%, 20% { transform: translateX(0); }
+    33%, 53% { transform: translateX(-33.33%); }
+    66%, 86% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0); }
+}
+.fade-slider {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.fade-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeTransition 12s infinite; /* Tổng thời gian 1 chu kỳ */
+}
+
+/* Thiết lập delay để các ảnh hiện lần lượt */
+.img1 { animation-delay: 0s; }
+.img2 { animation-delay: 4s; }
+.img3 { animation-delay: 8s; }
+
+@keyframes fadeTransition {
+    0% { opacity: 0; }
+    10% { opacity: 1; }  /* Hiện lên trong 10% đầu */
+    33% { opacity: 1; }  /* Giữ nguyên độ hiển thị */
+    43% { opacity: 0; }  /* Mờ dần đi */
+    100% { opacity: 0; }
+}
+.fade-slider img {
+    /* ... giữ nguyên các thuộc tính cũ ... */
+    animation: fadeTransition 12s infinite;
+}
+
+.img1 { animation-delay: 0s; }
+.img2 { animation-delay: -8s; } /* Nhảy thẳng đến đoạn ảnh 2 hiện */
+.img3 { animation-delay: -4s; } /* Nhảy thẳng đến đoạn ảnh 3 hiện */
