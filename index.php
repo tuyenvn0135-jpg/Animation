@@ -1,6 +1,6 @@
 <?php 
 require_once 'config.php';
-include_once 'header.php';
+include_once 'MID/header.php';
 
 // Trang chủ chỉ cần lấy ra 8 sản phẩm mới nhất để làm nổi bật (Feature Products)
 $products = $conn->query("SELECT * FROM products ORDER BY id DESC LIMIT 8");
@@ -11,7 +11,7 @@ $products = $conn->query("SELECT * FROM products ORDER BY id DESC LIMIT 8");
         <span class="bg-[#FF9F1C] text-black text-xs font-bold px-3 py-1 uppercase rounded-full tracking-widest">Premium Fishing Gear</span>
         <h1 class="text-3xl md:text-4xl font-black text-white mt-3" data-aos="fade-right">KINGFISHER - ĐẲNG CẤP CẦN THỦ</h1>
         <p class="text-gray-300 max-w-xl mx-auto text-xs md:text-sm font-light mt-2 mb-6">Phân phối thiết bị câu cá High-end nhập khẩu chính hãng từ Nhật Bản, Mỹ và Đức.</p>
-        <a href="categories.php" class="bg-amber-500 text-black font-bold px-6 py-3 rounded text-xs uppercase transition tracking-wider inline-block hover:bg-amber-600" data-aos="zoom-in">Khám Phá Cửa Hàng Ngay</a>
+        <a href="MID/categories.php" class="bg-amber-500 text-black font-bold px-6 py-3 rounded text-xs uppercase transition tracking-wider inline-block hover:bg-amber-600" data-aos="zoom-in">Khám Phá Cửa Hàng Ngay</a>
     </div>
 </div>
 
@@ -34,7 +34,7 @@ $products = $conn->query("SELECT * FROM products ORDER BY id DESC LIMIT 8");
                         </div>
                     </a>
                     <div class="p-4 pt-0">
-                        <a href="cart.php?action=add&id=<?php echo $row['id']; ?>" class="w-full block text-center bg-[#0A2540] text-white py-2 rounded text-[11px] font-bold uppercase hover:bg-blue-900 transition">🛒 Thêm giỏ hàng</a>
+                        <a href="MID/cart.php?action=add&id=<?php echo $row['id']; ?>" class="w-full block text-center bg-[#0A2540] text-white py-2 rounded text-[11px] font-bold uppercase hover:bg-blue-900 transition">🛒 Thêm giỏ hàng</a>
                     </div>
                 </div>
             <?php endwhile; ?>
@@ -42,10 +42,10 @@ $products = $conn->query("SELECT * FROM products ORDER BY id DESC LIMIT 8");
     </div>
 
     <div class="text-center mt-12" data-aos="zoom-in">
-        <a href="categories.php" class="inline-block border-2 border-[#0A2540] text-[#0A2540] hover:bg-[#0A2540] hover:text-white font-bold px-8 py-3 rounded-lg text-xs uppercase tracking-widest transition">
+        <a href="MID/categories.php" class="inline-block border-2 border-[#0A2540] text-[#0A2540] hover:bg-[#0A2540] hover:text-white font-bold px-8 py-3 rounded-lg text-xs uppercase tracking-widest transition">
             Xem Tất Cả Sản Phẩm ➡️
         </a>
     </div>
 </div>
 
-<?php include_once 'footer.php'; ?>
+<?php include_once 'MID/footer.php'; ?>

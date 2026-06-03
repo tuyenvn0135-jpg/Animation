@@ -14,4 +14,5 @@ if ($conn->connect_error) {
 // Tự động chọn database nếu đã tồn tại
 $conn->select_db($dbname);
 $conn->set_charset("utf8mb4");
+$base_url = "http://localhost/kingfisher/";
 ?>
